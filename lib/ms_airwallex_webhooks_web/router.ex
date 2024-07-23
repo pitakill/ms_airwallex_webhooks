@@ -7,5 +7,7 @@ defmodule MsAirwallexWebhooksWeb.Router do
 
   scope "/api", MsAirwallexWebhooksWeb do
     pipe_through :api
+
+    get "health", HealthCheck, :health_check
   end
 end

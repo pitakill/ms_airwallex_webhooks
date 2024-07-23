@@ -1,0 +1,17 @@
+services:
+  # Phoenix App Service
+  app:
+    container_name: ms_airwallex_webhooks
+    build: ./
+    volumes:
+      - .:/app
+      - deps_volume:/app/deps
+      - build_volume:/app/_build
+    ports:
+      - "${PORT}:${PORT}"
+    env_file:
+      - .env
+
+volumes:
+  deps_volume:
+  build_volume:
